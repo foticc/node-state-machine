@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bptnfklre8by"]
+[gd_scene load_steps=6 format=4 uid="uid://bptnfklre8by"]
 
 [ext_resource type="Texture2D" uid="uid://uk4baok82qqv" path="res://asset/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_ewaw7"]
 [ext_resource type="PackedScene" uid="uid://ch06eyp66dgh6" path="res://tscn/player.tscn" id="2_qtm2r"]
+[ext_resource type="Texture2D" uid="uid://ciaofgdnxh4my" path="res://asset/Sprites/7-Objects/12-Other Objects/Barrel.png" id="3_8wxc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtm2r"]
 texture = ExtResource("1_ewaw7")
@@ -58,3 +59,14 @@ position = Vector2(229, 486)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_8wxc5")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(479, 514)
+mass = 0.1
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(18, -22, -17, -22, -21, -16, -21, 19.8, -18.8, 22, 18.400002, 22, 21, 18.099998, 21, -16.8, 18, -19.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("3_8wxc5")

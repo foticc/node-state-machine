@@ -5,7 +5,8 @@ class_name Player
 
 enum State {
 	IDLE,
-	WALK
+	WALK,
+	JUMP
 }
 
 const SPEED = 300.0
@@ -16,7 +17,9 @@ func _ready() -> void:
 	print(default_gravity)
 
 func _unhandled_input(event: InputEvent) -> void:
-	pass
+	if event.is_action_pressed("jump"):
+		velocity.y = -300
+		
 
 func _physics_process(_delta: float) -> void:
 	pass
@@ -34,6 +37,8 @@ func transition_state(from:State,to:State) -> void:
 			animated_sprite.play("idle")
 		State.WALK:
 			animated_sprite.play("run")
+		State.JUMP:
+			animated_sprite.play("jump")
 
 func get_next_state(current:State)-> State:
 	var direction := Input.get_axis("left", "right")
@@ -44,6 +49,9 @@ func get_next_state(current:State)-> State:
 				return State.WALK
 		State.WALK:
 			if is_still:
+				return State.IDLE
+		State.JUMP:
+			if velocity.y >= 0:
 				return State.IDLE
 	return current
 
@@ -60,6 +68,9 @@ func tick_physics(state:State,delta:float)->void:
 				velocity.x = move_toward(velocity.x,direction * SPEED,SPEED/0.2) 
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
+		State.JUMP:
+			if not is_on_floor():
+				velocity.y += 0 * delta
 	if not is_zero_approx(direction):
 		animated_sprite.scale.x = -1 if direction<0 else 1
 	move_and_slide()
