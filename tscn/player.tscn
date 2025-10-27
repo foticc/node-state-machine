@@ -15,7 +15,7 @@ shape = SubResource("RectangleShape2D_7j80i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_7j80i")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="StateMachine" type="Node" parent="."]

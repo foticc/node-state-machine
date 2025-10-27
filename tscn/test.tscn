@@ -1,0 +1,261 @@
+[gd_scene load_steps=21 format=4 uid="uid://cw0lr3v60iyg"]
+
+[ext_resource type="TileSet" uid="uid://detlvn7e1w131" path="res://res/tile_set.tres" id="1_5jxjy"]
+[ext_resource type="Texture2D" uid="uid://dqv0w61vn84iu" path="res://asset/Sprites/7-Objects/6-Candle/1.png" id="2_lco2r"]
+[ext_resource type="Texture2D" uid="uid://cxt7p8235wgby" path="res://asset/Sprites/7-Objects/6-Candle/2.png" id="3_pu6gk"]
+[ext_resource type="Texture2D" uid="uid://d0qb7sgv13gka" path="res://asset/Sprites/7-Objects/6-Candle/3.png" id="4_dc5gi"]
+[ext_resource type="Texture2D" uid="uid://ds0lx0n464hls" path="res://asset/Sprites/7-Objects/6-Candle/4.png" id="5_v8vuo"]
+[ext_resource type="Texture2D" uid="uid://bgj2j1ffkkpox" path="res://asset/Sprites/7-Objects/6-Candle/5.png" id="6_p0oyg"]
+[ext_resource type="Texture2D" uid="uid://vb24uve7e1hh" path="res://asset/Sprites/7-Objects/6-Candle/6.png" id="7_mb8al"]
+[ext_resource type="Texture2D" uid="uid://bfss7x4ety52u" path="res://asset/Sprites/7-Objects/6-Candle/7.png" id="8_l67pg"]
+[ext_resource type="Texture2D" uid="uid://c1g3ye7axkgx7" path="res://asset/Sprites/7-Objects/6-Candle/8.png" id="9_fu8xo"]
+[ext_resource type="Texture2D" uid="uid://bx83hn8wkm5kv" path="res://asset/Sprites/7-Objects/7-Candle Light/1.png" id="10_pu6gk"]
+[ext_resource type="Texture2D" uid="uid://rc14ra6gn2ty" path="res://asset/Sprites/7-Objects/7-Candle Light/2.png" id="11_mb8al"]
+[ext_resource type="Texture2D" uid="uid://bhsysxk3hhn6g" path="res://asset/Sprites/7-Objects/7-Candle Light/3.png" id="12_l67pg"]
+[ext_resource type="Texture2D" uid="uid://b2mau15j52c5s" path="res://asset/Sprites/7-Objects/7-Candle Light/4.png" id="13_fu8xo"]
+[ext_resource type="Texture2D" uid="uid://wxldqklwjdhm" path="res://asset/Sprites/7-Objects/7-Candle Light/5.png" id="14_tah4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lco2r"]
+size = Vector2(18.5, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jxjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lco2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pu6gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dc5gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8vuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p0oyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mb8al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l67pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fu8xo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lco2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_pu6gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mb8al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l67pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fu8xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tah4c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_mb8al"]
+resource_name = "default"
+length = 0.23333667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [SubResource("SpriteFrames_lco2r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("light:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [SubResource("SpriteFrames_5jxjy")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"default"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("light:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_l67pg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_lco2r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("light:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_5jxjy")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("light:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l67pg"]
+_data = {
+&"RESET": SubResource("Animation_l67pg"),
+&"default": SubResource("Animation_mb8al")
+}
+
+[node name="Test" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAADAAYAAAADAAAAAAADAAcAAAADAAAAAAADAAgAAAADAAAAAAAEAAMAAAAEAAAAAAAEAAQAAAAEAAAAAAAEAAUAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAAEAAAAAAAFAAUAAAAEAAAAAAAFAAYAAAAEAAAAAAAGAAMAAAAEAAAAAAAGAAQAAAAEAAAAAAAGAAUAAAAEAAAAAAAGAAYAAAAEAAAAAAAEAAcAAAAEAAAAAAAFAAcAAAAEAAAAAAAGAAcAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAA=")
+tile_set = ExtResource("1_5jxjy")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(335.75, 318.5)
+shape = SubResource("RectangleShape2D_lco2r")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(336, 320)
+sprite_frames = SubResource("SpriteFrames_5jxjy")
+autoplay = "default"
+
+[node name="light" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(339, 282)
+sprite_frames = SubResource("SpriteFrames_lco2r")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_l67pg")
+}

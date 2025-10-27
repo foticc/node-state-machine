@@ -9,6 +9,8 @@ enum State {
 	JUMP
 }
 
+const bomb = preload("res://tscn/bomb.tscn")
+
 const SPEED = 300.0
 
 var default_gravity := ProjectSettings.get_setting("physics/2d/default_gravity") as float
@@ -17,9 +19,12 @@ func _ready() -> void:
 	print(default_gravity)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -300
-		
+	if event.is_action_pressed("attack"):
+		var instance:Bomb = bomb.instantiate()
+		instance.position = self.global_position
+		get_tree().current_scene.add_child(instance)
 
 func _physics_process(_delta: float) -> void:
 	pass
@@ -69,7 +74,7 @@ func tick_physics(state:State,delta:float)->void:
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 		State.JUMP:
-			if not is_on_floor():
+			if is_on_floor():
 				velocity.y += 0 * delta
 	if not is_zero_approx(direction):
 		animated_sprite.scale.x = -1 if direction<0 else 1

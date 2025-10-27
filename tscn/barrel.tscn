@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3oosgm7nf68k"]
+
+[ext_resource type="Texture2D" uid="uid://ciaofgdnxh4my" path="res://asset/Sprites/7-Objects/12-Other Objects/Barrel.png" id="1_g7xla"]
+[ext_resource type="Script" uid="uid://h7kc5wp53l16" path="res://classes/Barrel.gd" id="1_ndhd2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndhd2"]
+size = Vector2(44, 44)
+
+[node name="Barrel" type="RigidBody2D"]
+linear_damp = 0.3
+script = ExtResource("1_ndhd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g7xla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ndhd2")
