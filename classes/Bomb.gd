@@ -9,7 +9,6 @@ func _ready() -> void:
 	print("position：",self.global_position)
 	boom()
 
-
 func boom()->void:
 	await get_tree().create_timer(1).timeout
 	animated_sprite.play(&"boom")
