@@ -305,4 +305,4 @@ sprite_frames = SubResource("SpriteFrames_l67pg")
 autoplay = "default"
 
 [node name="Whale" parent="." instance=ExtResource("20_5kcdt")]
-position = Vector2(194, 479)
+position = Vector2(218, 461)

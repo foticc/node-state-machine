@@ -5,7 +5,7 @@ class_name Whale
 @onready var animated_sprite: AnimatedSprite2D = $Graphics/AnimatedSprite
 @onready var timer: Timer = $IdleTimer
 @onready var ray_cast: RayCast2D = $Graphics/RayCast
-@onready var graphics: Node = $Graphics
+@onready var graphics: Node2D = $Graphics
 
 enum State{
 	IDLE,
@@ -13,12 +13,17 @@ enum State{
 }
 var default_gravity := ProjectSettings.get_setting("physics/2d/default_gravity") as float
 
+var direction := -1:
+	set(v):
+		direction = v
+		graphics.scale.x = -direction
+
+
 func _ready() -> void:
 	print("on_ready")
 
 func _physics_process(_delta: float) -> void:
-	if ray_cast.is_colliding():
-		graphics.flip_h = true
+	pass
 
 func transition_state(from:State,to:State)->void:
 	print("[%s]from [%s]--->[%s]"%
@@ -31,10 +36,10 @@ func transition_state(from:State,to:State)->void:
 	match to:
 		State.IDLE:
 			animated_sprite.play("idle")
-			timer.start(3)
+			timer.start(_random_time())
 		State.RUN:
 			animated_sprite.play("run")
-			timer.start(1)
+			timer.start(_random_time())
 
 
 func get_next_state(current:State)->State:
@@ -45,6 +50,9 @@ func get_next_state(current:State)->State:
 		State.RUN:
 			if timer.is_stopped():
 				return State.IDLE
+			if ray_cast.is_colliding():
+				direction = -direction
+				return State.IDLE
 	return current
 
 func tick_physics(current:State,delta:float)->void:
@@ -52,12 +60,10 @@ func tick_physics(current:State,delta:float)->void:
 		velocity.y += default_gravity * delta
 	match current:
 		State.IDLE:
-			pass
+			velocity.x = direction * delta
 		State.RUN:
-			velocity.x += _get_direction() * 200 *delta
+			velocity.x += direction * 50 * delta
 	move_and_slide()
 
-func _get_direction()->int:
-	if ray_cast.is_colliding():
-		return 1
-	return -1
+func _random_time()->int:
+	return randi() % 6

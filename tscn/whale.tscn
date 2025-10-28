@@ -20,11 +20,11 @@ one_shot = true
 script = ExtResource("4_mle7i")
 metadata/_custom_type_script = "uid://fuedmpmi61nj"
 
-[node name="Graphics" type="Node" parent="."]
+[node name="Graphics" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Graphics"]
 sprite_frames = ExtResource("2_6fcso")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="RayCast" type="RayCast2D" parent="Graphics"]
