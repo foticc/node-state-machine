@@ -10,5 +10,5 @@ var default_gravity := ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	print("Barrel:postion",global_position)
 
-func on_explosion_hit(pos:Vector2)->void:
+func on_explosion_hit(_pos:Vector2)->void:
 	pass

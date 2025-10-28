@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cw0lr3v60iyg"]
+[gd_scene load_steps=28 format=4 uid="uid://cw0lr3v60iyg"]
 
 [ext_resource type="TileSet" uid="uid://detlvn7e1w131" path="res://res/tile_set.tres" id="1_5jxjy"]
 [ext_resource type="Texture2D" uid="uid://dqv0w61vn84iu" path="res://asset/Sprites/7-Objects/6-Candle/1.png" id="2_lco2r"]
@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://bhsysxk3hhn6g" path="res://asset/Sprites/7-Objects/7-Candle Light/3.png" id="12_l67pg"]
 [ext_resource type="Texture2D" uid="uid://b2mau15j52c5s" path="res://asset/Sprites/7-Objects/7-Candle Light/4.png" id="13_fu8xo"]
 [ext_resource type="Texture2D" uid="uid://wxldqklwjdhm" path="res://asset/Sprites/7-Objects/7-Candle Light/5.png" id="14_tah4c"]
+[ext_resource type="Texture2D" uid="uid://01ebkdhdjk5v" path="res://asset/Sprites/7-Objects/12-Other Objects/Windows.png" id="15_l67pg"]
+[ext_resource type="Texture2D" uid="uid://lheln43x5p5a" path="res://asset/Sprites/7-Objects/8-Window Light/1.png" id="16_qachy"]
+[ext_resource type="Texture2D" uid="uid://dysqhntsc7axd" path="res://asset/Sprites/7-Objects/8-Window Light/2.png" id="17_5kcdt"]
+[ext_resource type="Texture2D" uid="uid://c37ancpnx8ky" path="res://asset/Sprites/7-Objects/8-Window Light/3.png" id="18_0yjcn"]
+[ext_resource type="Texture2D" uid="uid://d2lrdthppf8y6" path="res://asset/Sprites/7-Objects/8-Window Light/4.png" id="19_h2dlj"]
+[ext_resource type="PackedScene" uid="uid://baae0eawv1yjh" path="res://tscn/whale.tscn" id="20_5kcdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lco2r"]
 size = Vector2(18.5, 35)
@@ -72,6 +78,81 @@ animations = [{
 "name": &"default",
 "speed": 20.0
 }]
+
+[sub_resource type="Animation" id="Animation_l67pg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_lco2r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("light:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_5jxjy")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("light:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_mb8al"]
 resource_name = "default"
@@ -150,94 +231,45 @@ tracks/5/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_l67pg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("light:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("SpriteFrames_lco2r")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("light:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:sprite_frames")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("SpriteFrames_5jxjy")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:animation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("light:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l67pg"]
 _data = {
 &"RESET": SubResource("Animation_l67pg"),
 &"default": SubResource("Animation_mb8al")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_l67pg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qachy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5kcdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0yjcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_h2dlj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
 [node name="Test" type="Node2D"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAADAAYAAAADAAAAAAADAAcAAAADAAAAAAADAAgAAAADAAAAAAAEAAMAAAAEAAAAAAAEAAQAAAAEAAAAAAAEAAUAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAMAAAAEAAAAAAAFAAQAAAAEAAAAAAAFAAUAAAAEAAAAAAAFAAYAAAAEAAAAAAAGAAMAAAAEAAAAAAAGAAQAAAAEAAAAAAAGAAUAAAAEAAAAAAAGAAYAAAAEAAAAAAAEAAcAAAAEAAAAAAAFAAcAAAAEAAAAAAAGAAcAAAAEAAAAAAAEAAgAAAAEAAAAAAAFAAgAAAAEAAAAAAAGAAgAAAAEAAAAAAA=")
+[node name="world" type="Node2D" parent="."]
+
+[node name="env" type="TileMapLayer" parent="world"]
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAQAAAAEAAgAAAABAAAAAAAFAAgAAAABAAAAAAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAJAAgAAAABAAQAAAABAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAAJAAcAAAABAAMAAAAAAAcAAAAAAAMAAAA=")
+tile_set = ExtResource("1_5jxjy")
+
+[node name="objects" type="TileMapLayer" parent="world"]
 tile_set = ExtResource("1_5jxjy")
 
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
 
@@ -259,3 +291,18 @@ autoplay = "default"
 libraries = {
 &"": SubResource("AnimationLibrary_l67pg")
 }
+
+[node name="window" type="Node2D" parent="."]
+position = Vector2(348, 417)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="window"]
+texture = ExtResource("15_l67pg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="window"]
+position = Vector2(65, 49)
+sprite_frames = SubResource("SpriteFrames_l67pg")
+autoplay = "default"
+
+[node name="Whale" parent="." instance=ExtResource("20_5kcdt")]
+position = Vector2(194, 479)
