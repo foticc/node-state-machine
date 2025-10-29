@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cw0lr3v60iyg"]
+[gd_scene load_steps=30 format=4 uid="uid://cw0lr3v60iyg"]
 
 [ext_resource type="TileSet" uid="uid://detlvn7e1w131" path="res://res/tile_set.tres" id="1_5jxjy"]
 [ext_resource type="Texture2D" uid="uid://dqv0w61vn84iu" path="res://asset/Sprites/7-Objects/6-Candle/1.png" id="2_lco2r"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c37ancpnx8ky" path="res://asset/Sprites/7-Objects/8-Window Light/3.png" id="18_0yjcn"]
 [ext_resource type="Texture2D" uid="uid://d2lrdthppf8y6" path="res://asset/Sprites/7-Objects/8-Window Light/4.png" id="19_h2dlj"]
 [ext_resource type="PackedScene" uid="uid://baae0eawv1yjh" path="res://tscn/whale.tscn" id="20_5kcdt"]
+[ext_resource type="PackedScene" uid="uid://b3oosgm7nf68k" path="res://tscn/barrel.tscn" id="22_c4efu"]
+[ext_resource type="PackedScene" uid="uid://ch06eyp66dgh6" path="res://tscn/player.tscn" id="22_h2dlj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lco2r"]
 size = Vector2(18.5, 35)
@@ -292,17 +294,24 @@ libraries = {
 &"": SubResource("AnimationLibrary_l67pg")
 }
 
-[node name="window" type="Node2D" parent="."]
+[node name="Window" type="Node2D" parent="."]
 position = Vector2(348, 417)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="window"]
+[node name="Window" type="Sprite2D" parent="Window"]
 texture = ExtResource("15_l67pg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="window"]
+[node name="Light" type="AnimatedSprite2D" parent="Window"]
 position = Vector2(65, 49)
 sprite_frames = SubResource("SpriteFrames_l67pg")
 autoplay = "default"
 
 [node name="Whale" parent="." instance=ExtResource("20_5kcdt")]
+z_index = 1
 position = Vector2(218, 461)
+
+[node name="Player" parent="." instance=ExtResource("22_h2dlj")]
+position = Vector2(451, 473)
+
+[node name="Barrel" parent="." instance=ExtResource("22_c4efu")]
+position = Vector2(309, 482)

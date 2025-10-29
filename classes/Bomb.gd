@@ -3,10 +3,12 @@ class_name Bomb
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var explosion_range: Area2D = $ExplosionRange
+@onready var ball_area: Area2D = $BallArea
 
 func _ready() -> void:
 	self.explosion_range.body_entered.connect(_notify)
 	print("position：",self.global_position)
+	self.ball_area.body_entered.connect(_on_body_entered)
 	boom()
 
 func boom()->void:
@@ -28,4 +30,16 @@ func _notify(body:Node2D)->void:
 			body.apply_impulse(dir.normalized() * 300)
 			if body.has_method("on_explosion_hit"):
 				body.on_explosion_hit(global_position)
-		
+	elif body is Whale:
+		if body.has_method("on_explosion_hit"):
+			body.on_explosion_hit(global_position)
+
+func _on_body_entered(body:Node2D)->void:
+	if body is Whale:
+		var dir = (self.position-body.position).normalized()
+		print("dir--->:",dir)
+		var target = dir * Vector2(10,10)
+		var tween = create_tween()
+		tween.tween_property(self,"position",self.position-target,0.2)
+		await tween.finished
+		queue_free()

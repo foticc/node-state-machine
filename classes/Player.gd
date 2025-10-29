@@ -30,8 +30,9 @@ func _physics_process(_delta: float) -> void:
 	pass
 
 func transition_state(from:State,to:State) -> void:
-	print("[%s]from [%s]--->[%s]"%
+	print("[%s][%s]from [%s]--->[%s]"%
 		[
+			name,
 			Engine.get_physics_frames(),
 			State.keys()[from] if from != -1 else "START",
 			State.keys()[to]

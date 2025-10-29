@@ -112,10 +112,17 @@ position = Vector2(0, 20)
 shape = SubResource("CircleShape2D_eovry")
 
 [node name="ExplosionRange" type="Area2D" parent="."]
-visible = false
-collision_mask = 2
+collision_mask = 10
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRange"]
 position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_eovry")
+
+[node name="BallArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallArea"]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_eovry")

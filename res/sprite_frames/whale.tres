@@ -1,16 +1,27 @@
-[gd_resource type="SpriteFrames" load_steps=59 format=3 uid="uid://cmexh3jfl0hxh"]
+[gd_resource type="SpriteFrames" load_steps=87 format=3 uid="uid://cmexh3jfl0hxh"]
 
+[ext_resource type="Texture2D" uid="uid://c3jdjj4hnh4kd" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/1.png" id="1_ayes1"]
 [ext_resource type="Texture2D" uid="uid://onxiroecalg4" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/1.png" id="1_t36af"]
 [ext_resource type="Texture2D" uid="uid://b7j2ig70tf518" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/2.png" id="2_daelp"]
+[ext_resource type="Texture2D" uid="uid://jnju85815rk8" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/2.png" id="2_twxid"]
+[ext_resource type="Texture2D" uid="uid://dsfg47rndy5pk" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/3.png" id="3_7tdr1"]
 [ext_resource type="Texture2D" uid="uid://cwgj7wstsv38w" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/3.png" id="3_ng4jw"]
 [ext_resource type="Texture2D" uid="uid://blmugls4b0m5x" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/4.png" id="4_3h7bx"]
+[ext_resource type="Texture2D" uid="uid://dq18tkawqlwpn" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/4.png" id="4_vhehy"]
 [ext_resource type="Texture2D" uid="uid://bo7ev8ob8qtch" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/5.png" id="5_g03mw"]
+[ext_resource type="Texture2D" uid="uid://dq0jvdqf71mgt" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/5.png" id="5_rv0i6"]
+[ext_resource type="Texture2D" uid="uid://h0w5vc3aynra" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/6.png" id="6_hc7mw"]
 [ext_resource type="Texture2D" uid="uid://c2k2e6bmw351e" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/6.png" id="6_kic07"]
 [ext_resource type="Texture2D" uid="uid://brud3y2b78o7n" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/7.png" id="7_6isri"]
+[ext_resource type="Texture2D" uid="uid://cxjxjbrglpuqr" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/7.png" id="7_jic7m"]
+[ext_resource type="Texture2D" uid="uid://dsrxtsgmhhoe4" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/8.png" id="8_cvjqe"]
 [ext_resource type="Texture2D" uid="uid://c0ot1fgu8pjkg" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/8.png" id="8_i70yn"]
 [ext_resource type="Texture2D" uid="uid://dswu1d7thteq2" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/9.png" id="9_ir8tc"]
+[ext_resource type="Texture2D" uid="uid://dd20na8716a4e" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/9.png" id="9_whf24"]
 [ext_resource type="Texture2D" uid="uid://c8mgq8pnvpl7m" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/10.png" id="10_grvns"]
+[ext_resource type="Texture2D" uid="uid://bq7oih0dtaw3i" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/10.png" id="10_y5xr6"]
 [ext_resource type="Texture2D" uid="uid://yh5fikgv18mm" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/11.png" id="11_1onmh"]
+[ext_resource type="Texture2D" uid="uid://d1oj18ldawcj6" path="res://asset/Sprites/6-Enemy-Whale/7-Attack/11.png" id="11_fpp3l"]
 [ext_resource type="Texture2D" uid="uid://brx1gpu20dcvw" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/12.png" id="12_yd3c1"]
 [ext_resource type="Texture2D" uid="uid://hya007allsj" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/13.png" id="13_46ukg"]
 [ext_resource type="Texture2D" uid="uid://dpktfp1bcohyf" path="res://asset/Sprites/6-Enemy-Whale/1-Idle/14.png" id="14_hqb00"]
@@ -56,11 +67,92 @@
 [ext_resource type="Texture2D" uid="uid://hv6w3rc6reui" path="res://asset/Sprites/6-Enemy-Whale/2-Run/10.png" id="54_g4l47"]
 [ext_resource type="Texture2D" uid="uid://bll8fquii473a" path="res://asset/Sprites/6-Enemy-Whale/2-Run/11.png" id="55_wlg3m"]
 [ext_resource type="Texture2D" uid="uid://dk7tq7vlktvm7" path="res://asset/Sprites/6-Enemy-Whale/2-Run/12.png" id="56_a37d2"]
+[ext_resource type="Texture2D" uid="uid://cppkg7uq27rgr" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/1.png" id="56_cvjqe"]
 [ext_resource type="Texture2D" uid="uid://bt3nijer1mcag" path="res://asset/Sprites/6-Enemy-Whale/2-Run/13.png" id="57_prubd"]
+[ext_resource type="Texture2D" uid="uid://cf5k3g0rqbkhc" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/2.png" id="57_whf24"]
 [ext_resource type="Texture2D" uid="uid://bp1xdkqjead5l" path="res://asset/Sprites/6-Enemy-Whale/2-Run/14.png" id="58_1swcx"]
+[ext_resource type="Texture2D" uid="uid://mm8klg4crv5j" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/3.png" id="58_y5xr6"]
+[ext_resource type="Texture2D" uid="uid://bxis81aa5wawh" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/4.png" id="59_fpp3l"]
+[ext_resource type="Texture2D" uid="uid://bi70ne3je4itx" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/1.png" id="59_wlg3m"]
+[ext_resource type="Texture2D" uid="uid://b1wrwqfycvo6t" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/5.png" id="60_6jit4"]
+[ext_resource type="Texture2D" uid="uid://xwh78kflf3d0" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/2.png" id="60_a37d2"]
+[ext_resource type="Texture2D" uid="uid://b6wsdaxsnnyfq" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/6.png" id="61_6ypk5"]
+[ext_resource type="Texture2D" uid="uid://c5uklcu7ym4jk" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/3.png" id="61_prubd"]
+[ext_resource type="Texture2D" uid="uid://d12d1fbkr6q3m" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/4.png" id="62_1swcx"]
+[ext_resource type="Texture2D" uid="uid://bg3twpjy04e01" path="res://asset/Sprites/6-Enemy-Whale/9-Hit/7.png" id="62_7sksl"]
+[ext_resource type="Texture2D" uid="uid://bb5dfu2fjaf12" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/5.png" id="63_v8qo2"]
+[ext_resource type="Texture2D" uid="uid://gw28yjaa415o" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/6.png" id="64_7883e"]
+[ext_resource type="Texture2D" uid="uid://jmno0pum6jbg" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/7.png" id="65_wo8nr"]
+[ext_resource type="Texture2D" uid="uid://usw516viideo" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/8.png" id="66_imddx"]
+[ext_resource type="Texture2D" uid="uid://wkhbjom6vb5a" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/9.png" id="67_j0xw7"]
+[ext_resource type="Texture2D" uid="uid://cphd6porq52nq" path="res://asset/Sprites/6-Enemy-Whale/8-Swalow (Bomb)/10.png" id="68_n3ef7"]
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ayes1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_twxid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7tdr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vhehy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rv0i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hc7mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jic7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cvjqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_whf24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y5xr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fpp3l")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_cvjqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_whf24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_y5xr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_fpp3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_6jit4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_6ypk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_7sksl")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_t36af")
@@ -243,5 +335,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_wlg3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_a37d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_prubd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_1swcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_v8qo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_7883e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_wo8nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_imddx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_j0xw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_n3ef7")
+}],
+"loop": false,
+"name": &"swalow",
 "speed": 20.0
 }]
