@@ -11,6 +11,10 @@ func _ready() -> void:
 	self.ball_area.body_entered.connect(_on_body_entered)
 	boom()
 
+func _physics_process(_delta: float) -> void:
+	rotation = 0
+
+
 func boom()->void:
 	await get_tree().create_timer(1).timeout
 	animated_sprite.play(&"boom")

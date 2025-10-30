@@ -16,6 +16,7 @@ enum State{
 	HIT
 }
 var default_gravity := ProjectSettings.get_setting("physics/2d/default_gravity") as float
+var is_hit:=false
 
 var direction := -1:
 	set(v):
@@ -54,8 +55,11 @@ func transition_state(from:State,to:State)->void:
 		State.HIT:
 			animated_sprite.play("hit")
 			await animated_sprite.animation_finished
+			is_hit = false
 
 func get_next_state(current:State)->State:
+	if is_hit:
+		return State.HIT
 	var ray = ray_cast.get_collider()
 	#if ray:
 		#print("ray[%s]--->[%s]"%[Engine.get_physics_frames(),ray.name])
@@ -84,7 +88,7 @@ func get_next_state(current:State)->State:
 			if ray == null:
 				return State.IDLE
 		State.HIT:
-			pass
+			return State.IDLE
 	return current
 
 func tick_physics(current:State,delta:float)->void:
@@ -108,4 +112,4 @@ func _random_time()->int:
 
 func on_explosion_hit(_pos:Vector2)->void:
 	print("on_hurt")
-	state_machine.current_state = State.HIT
+	is_hit = true

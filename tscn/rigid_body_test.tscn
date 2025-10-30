@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=4 uid="uid://bww1nh4th8va1"]
+
+[ext_resource type="Script" uid="uid://dayhcpcc684lx" path="res://tscn/rigid_body_test.gd" id="1_228ol"]
+[ext_resource type="TileSet" uid="uid://detlvn7e1w131" path="res://res/tile_set.tres" id="1_ess5a"]
+[ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="4_em1vi"]
+[ext_resource type="Texture2D" uid="uid://b35b2bcdltwt1" path="res://asset/Sprites/7-Objects/12-Other Objects/Chair.png" id="5_em1vi"]
+[ext_resource type="Texture2D" uid="uid://beqlq430d61qn" path="res://asset/Sprites/7-Objects/12-Other Objects/Blue Bottle.png" id="5_ut8ab"]
+[ext_resource type="Texture2D" uid="uid://blibiq35uj31v" path="res://asset/Sprites/7-Objects/12-Other Objects/Table.png" id="6_ut8ab"]
+[ext_resource type="Texture2D" uid="uid://cuw1m1km5cc5i" path="res://asset/Sprites/7-Objects/12-Other Objects/Green Bottle.png" id="7_naik1"]
+[ext_resource type="Texture2D" uid="uid://bv1udanltcqhs" path="res://asset/Sprites/7-Objects/12-Other Objects/Red Bottle.png" id="8_cbgdk"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_228ol")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAkAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAABAAAAAAAQAAkAAAABAAAAAAARAAkAAAABAAAAAAAAAAgAAAACAAEAAAAAAAcAAAACAAEAAAAAAAYAAAACAAEAAAAAAAUAAAACAAEAAAAAAAQAAAACAAEAAAAAAAMAAAACAAEAAAAAAAIAAAACAAEAAAAAAAEAAAACAAEAAAAAAAAAAAACAAEAAAARAAgAAAAAAAEAAAARAAcAAAAAAAEAAAARAAYAAAAAAAEAAAARAAUAAAAAAAEAAAARAAQAAAAAAAEAAAARAAMAAAAAAAEAAAARAAIAAAAAAAEAAAARAAEAAAAAAAEAAAARAAAAAAAAAAEAAAAAAAkAAAACAAAAAAA=")
+tile_set = ExtResource("1_ess5a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 996.0
+offset_top = 45.0
+offset_right = 1034.0
+offset_bottom = 76.0
+text = "test"
+
+[node name="Context" type="Node2D" parent="."]
+position = Vector2(410, 200)
+
+[node name="BlueBottle" parent="Context" instance=ExtResource("4_em1vi")]
+position = Vector2(136, 120)
+mass = 2.0
+texture = ExtResource("5_ut8ab")
+
+[node name="Barrel" parent="Context" instance=ExtResource("4_em1vi")]
+position = Vector2(102, -21)
+mass = 40.0
+
+[node name="Chair" parent="Context" instance=ExtResource("4_em1vi")]
+position = Vector2(78, 313)
+mass = 8.0
+texture = ExtResource("5_em1vi")
+
+[node name="Table" parent="Context" instance=ExtResource("4_em1vi")]
+position = Vector2(48, 340)
+mass = 20.0
+texture = ExtResource("6_ut8ab")
+
+[node name="GreenBottle" parent="Context" instance=ExtResource("4_em1vi")]
+position = Vector2(240, 45)
+mass = 2.0
+texture = ExtResource("7_naik1")
+
+[node name="RedBottle" parent="Context" instance=ExtResource("4_em1vi")]
+position = Vector2(45, 313)
+mass = 2.0
+texture = ExtResource("8_cbgdk")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Context"]
+position = Vector2(169, 205)
+collision_layer = 2
+collision_mask = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Context/RigidBody2D"]
+texture = ExtResource("5_em1vi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Context/RigidBody2D"]
+polygon = PackedVector2Array(-15, -28, -15, -27, -16, -27, -16, 27, -15, 27, -15, 28, -9, 28, -9, 24, 9, 24, 9, 28, 15, 28, 15, 27, 16, 27, 16, 3, 15, 3, 15, 2, -9, 2, -9, -28)
