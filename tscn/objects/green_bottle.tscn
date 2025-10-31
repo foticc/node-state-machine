@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4r2au0vktusv"]
+
+[ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="1_4g610"]
+[ext_resource type="Texture2D" uid="uid://cuw1m1km5cc5i" path="res://asset/Sprites/7-Objects/12-Other Objects/Green Bottle.png" id="2_wplhh"]
+
+[node name="GreenBottle" instance=ExtResource("1_4g610")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_wplhh")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(-7, -12)
+polygon = PackedVector2Array(4, 1, 4, 3, 4, 8, 0, 9, 0, 23, 13, 23, 14, 23, 14, 9, 13, 8, 10, 8, 11, 3, 11, 1, 4, 0)

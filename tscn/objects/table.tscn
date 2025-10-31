@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkcrwk2x5jbs"]
+
+[ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="1_w3ers"]
+[ext_resource type="Texture2D" uid="uid://blibiq35uj31v" path="res://asset/Sprites/7-Objects/12-Other Objects/Table.png" id="2_jw53k"]
+
+[node name="Table" instance=ExtResource("1_w3ers")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_jw53k")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(-40, -16)
+polygon = PackedVector2Array(0, 7, 13, 11, 14, 11, 15, 31, 15, 32, 19, 32, 21, 10, 21, 9, 59, 9, 61, 32, 65, 32, 66, 31, 66, 11, 79, 7, 80, 7, 80, 0, 0, 0)
