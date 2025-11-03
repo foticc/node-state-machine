@@ -1,6 +1,5 @@
-[gd_scene load_steps=36 format=4 uid="uid://cw0lr3v60iyg"]
+[gd_scene load_steps=26 format=3 uid="uid://cw0lr3v60iyg"]
 
-[ext_resource type="TileSet" uid="uid://detlvn7e1w131" path="res://res/tile_set.tres" id="1_5jxjy"]
 [ext_resource type="Texture2D" uid="uid://dqv0w61vn84iu" path="res://asset/Sprites/7-Objects/6-Candle/1.png" id="2_lco2r"]
 [ext_resource type="Texture2D" uid="uid://cxt7p8235wgby" path="res://asset/Sprites/7-Objects/6-Candle/2.png" id="3_pu6gk"]
 [ext_resource type="Texture2D" uid="uid://d0qb7sgv13gka" path="res://asset/Sprites/7-Objects/6-Candle/3.png" id="4_dc5gi"]
@@ -14,20 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://bhsysxk3hhn6g" path="res://asset/Sprites/7-Objects/7-Candle Light/3.png" id="12_l67pg"]
 [ext_resource type="Texture2D" uid="uid://b2mau15j52c5s" path="res://asset/Sprites/7-Objects/7-Candle Light/4.png" id="13_fu8xo"]
 [ext_resource type="Texture2D" uid="uid://wxldqklwjdhm" path="res://asset/Sprites/7-Objects/7-Candle Light/5.png" id="14_tah4c"]
-[ext_resource type="Texture2D" uid="uid://01ebkdhdjk5v" path="res://asset/Sprites/7-Objects/12-Other Objects/Windows.png" id="15_l67pg"]
-[ext_resource type="Texture2D" uid="uid://lheln43x5p5a" path="res://asset/Sprites/7-Objects/8-Window Light/1.png" id="16_qachy"]
-[ext_resource type="Texture2D" uid="uid://dysqhntsc7axd" path="res://asset/Sprites/7-Objects/8-Window Light/2.png" id="17_5kcdt"]
-[ext_resource type="Texture2D" uid="uid://c37ancpnx8ky" path="res://asset/Sprites/7-Objects/8-Window Light/3.png" id="18_0yjcn"]
-[ext_resource type="Texture2D" uid="uid://d2lrdthppf8y6" path="res://asset/Sprites/7-Objects/8-Window Light/4.png" id="19_h2dlj"]
+[ext_resource type="PackedScene" uid="uid://b3o017rjlv47w" path="res://tscn/objects/window.tscn" id="15_qachy"]
 [ext_resource type="PackedScene" uid="uid://baae0eawv1yjh" path="res://tscn/whale.tscn" id="20_5kcdt"]
 [ext_resource type="PackedScene" uid="uid://b3oosgm7nf68k" path="res://tscn/barrel.tscn" id="22_c4efu"]
 [ext_resource type="PackedScene" uid="uid://ch06eyp66dgh6" path="res://tscn/player.tscn" id="22_h2dlj"]
+[ext_resource type="PackedScene" uid="uid://b0khict2spy8q" path="res://tscn/map.tscn" id="23_c4efu"]
 [ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="23_qn3f3"]
-[ext_resource type="Texture2D" uid="uid://beqlq430d61qn" path="res://asset/Sprites/7-Objects/12-Other Objects/Blue Bottle.png" id="24_qn3f3"]
-[ext_resource type="Texture2D" uid="uid://b35b2bcdltwt1" path="res://asset/Sprites/7-Objects/12-Other Objects/Chair.png" id="25_32igv"]
-[ext_resource type="Texture2D" uid="uid://cuw1m1km5cc5i" path="res://asset/Sprites/7-Objects/12-Other Objects/Green Bottle.png" id="26_2j1dy"]
-[ext_resource type="Texture2D" uid="uid://bv1udanltcqhs" path="res://asset/Sprites/7-Objects/12-Other Objects/Red Bottle.png" id="27_u5j0k"]
-[ext_resource type="Texture2D" uid="uid://blibiq35uj31v" path="res://asset/Sprites/7-Objects/12-Other Objects/Table.png" id="28_jch0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lco2r"]
 size = Vector2(18.5, 35)
@@ -245,39 +236,11 @@ _data = {
 &"default": SubResource("Animation_mb8al")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_l67pg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_qachy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_5kcdt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_0yjcn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_h2dlj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 20.0
-}]
-
 [node name="Test" type="Node2D"]
 
-[node name="world" type="Node2D" parent="."]
-
-[node name="env" type="TileMapLayer" parent="world"]
-tile_map_data = PackedByteArray("AAAAAAgAAAAAAAQAAAAEAAgAAAABAAAAAAAFAAgAAAABAAAAAAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAJAAgAAAABAAQAAAABAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAAJAAcAAAABAAMAAAAAAAcAAAAAAAMAAAA=")
-tile_set = ExtResource("1_5jxjy")
-
-[node name="objects" type="TileMapLayer" parent="world"]
-tile_set = ExtResource("1_5jxjy")
+[node name="Node2D2" parent="." instance=ExtResource("23_c4efu")]
 
 [node name="Node2D" type="Node2D" parent="."]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
 
@@ -300,17 +263,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_l67pg")
 }
 
-[node name="Window" type="Node2D" parent="."]
+[node name="Window" parent="." instance=ExtResource("15_qachy")]
 position = Vector2(348, 417)
-metadata/_edit_group_ = true
-
-[node name="Window" type="Sprite2D" parent="Window"]
-texture = ExtResource("15_l67pg")
-
-[node name="Light" type="AnimatedSprite2D" parent="Window"]
-position = Vector2(65, 49)
-sprite_frames = SubResource("SpriteFrames_l67pg")
-autoplay = "default"
+scale = Vector2(-1, 1)
 
 [node name="Whale" parent="." instance=ExtResource("20_5kcdt")]
 z_index = 1
@@ -329,20 +284,15 @@ position = Vector2(657.69293, 572.2267)
 
 [node name="Sobj2" parent="Objects" instance=ExtResource("23_qn3f3")]
 position = Vector2(228, 190)
-texture = ExtResource("24_qn3f3")
 
 [node name="Sobj3" parent="Objects" instance=ExtResource("23_qn3f3")]
 position = Vector2(228, 190)
-texture = ExtResource("25_32igv")
 
 [node name="Sobj4" parent="Objects" instance=ExtResource("23_qn3f3")]
 position = Vector2(228, 190)
-texture = ExtResource("26_2j1dy")
 
 [node name="Sobj5" parent="Objects" instance=ExtResource("23_qn3f3")]
 position = Vector2(228, 190)
-texture = ExtResource("27_u5j0k")
 
 [node name="Sobj6" parent="Objects" instance=ExtResource("23_qn3f3")]
 position = Vector2(228, 190)
-texture = ExtResource("28_jch0y")

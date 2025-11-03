@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3o017rjlv47w"]
+
+[ext_resource type="Texture2D" uid="uid://01ebkdhdjk5v" path="res://asset/Sprites/7-Objects/12-Other Objects/Windows.png" id="1_0ld0e"]
+[ext_resource type="Texture2D" uid="uid://lheln43x5p5a" path="res://asset/Sprites/7-Objects/8-Window Light/1.png" id="2_yxcp2"]
+[ext_resource type="Texture2D" uid="uid://dysqhntsc7axd" path="res://asset/Sprites/7-Objects/8-Window Light/2.png" id="3_c2bhd"]
+[ext_resource type="Texture2D" uid="uid://c37ancpnx8ky" path="res://asset/Sprites/7-Objects/8-Window Light/3.png" id="4_5jidi"]
+[ext_resource type="Texture2D" uid="uid://d2lrdthppf8y6" path="res://asset/Sprites/7-Objects/8-Window Light/4.png" id="5_l1n5q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l67pg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yxcp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c2bhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5jidi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l1n5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Windows" type="Node2D"]
+
+[node name="Window" type="Sprite2D" parent="."]
+texture = ExtResource("1_0ld0e")
+
+[node name="Light" type="AnimatedSprite2D" parent="."]
+position = Vector2(65, 49)
+sprite_frames = SubResource("SpriteFrames_l67pg")
+autoplay = "default"

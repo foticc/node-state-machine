@@ -11,7 +11,6 @@ var right_top = Vector2(510,510)
 var right = Vector2(510,555)
 
 var test_point = Vector2.ZERO
-
 var radius = 100
 var power = 3000
 
@@ -22,7 +21,7 @@ func _ready() -> void:
 	menu.id_pressed.connect(_on_id_pressed)
 
 func _draw() -> void:
-	if test_point !=Vector2.ZERO:
+	if test_point != Vector2.ZERO:
 		print("test_point",test_point)
 		draw_circle(test_point,radius,Color(0, 0.8, 1, 0.3))
 
