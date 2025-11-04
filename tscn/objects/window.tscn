@@ -26,12 +26,18 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Windows" type="Node2D"]
-
-[node name="Window" type="Sprite2D" parent="."]
+[node name="Window" type="Sprite2D"]
 texture = ExtResource("1_0ld0e")
 
 [node name="Light" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(65, 49)
 sprite_frames = SubResource("SpriteFrames_l67pg")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(64, 49)
+energy = 11.94
+shadow_enabled = true
+shadow_item_cull_mask = 7
+texture = ExtResource("2_yxcp2")

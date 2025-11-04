@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://ced8g1vjsptdx"]
+
+[ext_resource type="Texture2D" uid="uid://blkykk7k4rl8r" path="res://icon.svg" id="1_kb0pc"]
+[ext_resource type="PackedScene" uid="uid://b3o017rjlv47w" path="res://tscn/objects/window.tscn" id="2_mk3oa"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mk3oa"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kb0pc"]
+polygon = PackedVector2Array(158, -132, 158, -239, 362, -251, 781, -245, 797, -233, 816, -229, 830, -204, 826, 418, 713, 416, 701, 385, -308, 390, -363, 367, -363, -259, 80, -264, 99, -251, 105, -151, 76, -138, -230, -138, -234, 262, 701, 268, 701, -126, 356, -126)
+
+[sub_resource type="Gradient" id="Gradient_mk3oa"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mbd1b"]
+gradient = SubResource("Gradient_mk3oa")
+width = 1200
+height = 1200
+fill_from = Vector2(0.54273504, 1)
+fill_to = Vector2(0.45726496, 0)
+
+[node name="light" type="Node2D"]
+
+[node name="env" type="StaticBody2D" parent="."]
+visibility_layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="env"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 1256.0
+offset_bottom = 735.0
+color = Color(0.41981313, 0.41981313, 0.41981304, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="env"]
+modulate = Color(0.043039158, 0.04303915, 0.04303915, 1)
+position = Vector2(539, 590)
+scale = Vector2(8.382813, 1)
+texture = ExtResource("1_kb0pc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="env"]
+modulate = Color(0.017732391, 0.017732391, 0.01773239, 1)
+position = Vector2(213.00002, 57)
+scale = Vector2(3.535157, 1)
+texture = ExtResource("1_kb0pc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="env"]
+modulate = Color(0.017732391, 0.017732391, 0.01773239, 1)
+position = Vector2(817.37506, 75)
+scale = Vector2(4.9277353, 1)
+texture = ExtResource("1_kb0pc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="env"]
+modulate = Color(0.017732391, 0.017732391, 0.01773239, 1)
+position = Vector2(1107, 354.9638)
+rotation = 1.5707964
+scale = Vector2(5.008379, 1)
+texture = ExtResource("1_kb0pc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="env"]
+modulate = Color(0.017732391, 0.017732391, 0.01773239, 1)
+position = Vector2(38.999992, 316.96378)
+rotation = 1.5707964
+scale = Vector2(5.008379, 1)
+texture = ExtResource("1_kb0pc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="env"]
+polygon = PackedVector2Array(-23, -7, 430, -4, 445, 107, 412, 125, 107, 126, 109, 517, 1042, 525, 1039, 140, 502, 132, 491, 9, 1130, 12, 1173, 57, 1173, 679, 1064, 679, 1033, 648, 43, 657, -26, 625)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(356, 262)
+texture = ExtResource("1_kb0pc")
+metadata/_edit_group_ = true
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_mk3oa")
+occluder_light_mask = 7
+metadata/_edit_group_ = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(340, 260)
+occluder = SubResource("OccluderPolygon2D_kb0pc")
+
+[node name="Window" parent="." instance=ExtResource("2_mk3oa")]
+position = Vector2(224, 238)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(468, 62)
+energy = 11.12
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_mbd1b")

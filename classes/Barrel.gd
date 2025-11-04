@@ -1,5 +1,5 @@
 extends RigidBody2D
-class_name Barrel
+class_name 
 
 
 func _ready() -> void:
