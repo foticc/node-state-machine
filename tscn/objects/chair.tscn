@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://4dj7ue21xtbb"]
+[gd_scene load_steps=5 format=3 uid="uid://4dj7ue21xtbb"]
 
-[ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="1_eje5w"]
+[ext_resource type="Script" uid="uid://b8td3c14wfy8k" path="res://classes/Sobj.gd" id="1_eje5w"]
 [ext_resource type="Texture2D" uid="uid://b35b2bcdltwt1" path="res://asset/Sprites/7-Objects/12-Other Objects/Chair.png" id="2_ma25h"]
 
-[node name="Chair" instance=ExtResource("1_eje5w")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma25h"]
+size = Vector2(5.5, 55.5)
 
-[node name="Sprite" parent="." index="0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eje5w"]
+size = Vector2(26.5, 26.5)
+
+[node name="Chair" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 6
+lock_rotation = true
+script = ExtResource("1_eje5w")
+
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_ma25h")
 
-[node name="CollisionPolygon2D" parent="." index="1"]
-position = Vector2(-4.240886, 13.891462)
-polygon = PackedVector2Array(-11.759113, -40.89146, -11.759113, 14.108538, -4.759114, 14.108538, -4.759114, 10.108538, 13.240887, 10.108538, 13.240887, 14.108538, 19.240887, 14.108538, 19.240887, -11.891462, -4.759114, -11.891462, -4.759114, -40.891464)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.75, 0.25)
+shape = SubResource("RectangleShape2D_ma25h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2.75, 14.75)
+shape = SubResource("RectangleShape2D_eje5w")

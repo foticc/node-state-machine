@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b0khict2spy8q"]
+[gd_scene load_steps=8 format=4 uid="uid://b0khict2spy8q"]
 
 [ext_resource type="TileSet" uid="uid://detlvn7e1w131" path="res://res/tile_set.tres" id="1_3ebdm"]
 [ext_resource type="TileSet" uid="uid://cgnt1o8hqe1yf" path="res://res/tile_set_new.tres" id="2_oeqvb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du50j34vg7gu5" path="res://tscn/objects/red_bottle.tscn" id="4_yx4x3"]
 [ext_resource type="PackedScene" uid="uid://4dj7ue21xtbb" path="res://tscn/objects/chair.tscn" id="5_x0n1c"]
 [ext_resource type="PackedScene" uid="uid://bxkcrwk2x5jbs" path="res://tscn/objects/table.tscn" id="6_e2bhf"]
+[ext_resource type="PackedScene" uid="uid://c01htvpidfn7m" path="res://tscn/objects/bule_bottle.tscn" id="7_1f6fc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -36,4 +37,12 @@ position = Vector2(382, 546)
 position = Vector2(449, 558)
 
 [node name="Chair2" parent="Objects" instance=ExtResource("5_x0n1c")]
-position = Vector2(510, 548)
+position = Vector2(537, 545)
+scale = Vector2(-1, 1)
+
+[node name="BuleBottle" parent="Objects" instance=ExtResource("7_1f6fc")]
+position = Vector2(475, 530)
+
+[node name="RedBottle2" parent="Objects" instance=ExtResource("4_yx4x3")]
+position = Vector2(434, 532)
+rotation = 1.5707964
