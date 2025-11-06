@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bww1nh4th8va1"]
+[gd_scene load_steps=8 format=3 uid="uid://bww1nh4th8va1"]
 
 [ext_resource type="Script" uid="uid://dayhcpcc684lx" path="res://tscn/rigid_body_test.gd" id="1_228ol"]
 [ext_resource type="PackedScene" uid="uid://b0khict2spy8q" path="res://tscn/map.tscn" id="2_dav31"]
 [ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="4_em1vi"]
 [ext_resource type="Texture2D" uid="uid://b35b2bcdltwt1" path="res://asset/Sprites/7-Objects/12-Other Objects/Chair.png" id="5_em1vi"]
+[ext_resource type="PackedScene" uid="uid://ckjjxaii5o838" path="res://tscn/player2.tscn" id="5_ut8ab"]
+[ext_resource type="PackedScene" uid="uid://baae0eawv1yjh" path="res://tscn/whale.tscn" id="6_ut8ab"]
+[ext_resource type="PackedScene" uid="uid://dnrnwdgbyp41" path="res://tscn/enemy/captain.tscn" id="7_naik1"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_228ol")
 
-[node name="Node2D" parent="." instance=ExtResource("2_dav31")]
+[node name="Map" parent="." instance=ExtResource("2_dav31")]
+position = Vector2(-16, -23)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -51,9 +55,26 @@ mass = 2.0
 position = Vector2(169, 205)
 collision_layer = 2
 collision_mask = 6
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Context/RigidBody2D"]
+position = Vector2(43, 77)
 texture = ExtResource("5_em1vi")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Context/RigidBody2D"]
-polygon = PackedVector2Array(-15, -28, -15, -27, -16, -27, -16, 27, -15, 27, -15, 28, -9, 28, -9, 24, 9, 24, 9, 28, 15, 28, 15, 27, 16, 27, 16, 3, 15, 3, 15, 2, -9, 2, -9, -28)
+position = Vector2(39, 77)
+polygon = PackedVector2Array(-15, -28, -15, -27, -16, -27, -16, 27, -15, 27, -15, 28, -9, 28, -9, 24, 9, 24, 9, 28, 15, 28, 15, 27, 16, 27, 16, 3, 15, 3, 15, 2, -1, 7, -9, -28)
+
+[node name="Player2" parent="." instance=ExtResource("5_ut8ab")]
+position = Vector2(774, 471)
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Whale2" parent="Enemy" instance=ExtResource("6_ut8ab")]
+position = Vector2(534, 214)
+
+[node name="Whale" parent="Enemy" instance=ExtResource("6_ut8ab")]
+position = Vector2(987.57336, 346.10776)
+
+[node name="Captain" parent="." instance=ExtResource("7_naik1")]
+position = Vector2(255, 508)

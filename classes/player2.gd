@@ -1,13 +1,14 @@
 extends CharacterBody2D
-class_name Player
+class_name Player2
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
-@onready var animated_action: AnimatedSprite2D = $AnimatedAction
+@onready var animated_sprite: AnimationPlayer = $AnimationPlayer
+@onready var sprite: Node2D = $Sprite
 
 enum State {
 	IDLE,
 	WALK,
-	JUMP
+	JUMP,
+	FALL
 }
 
 const bomb = preload("res://tscn/bomb.tscn")
@@ -21,7 +22,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
-		velocity.y = -300
+		velocity.y = -400
 	if event.is_action_pressed("attack"):
 		var instance:Bomb = bomb.instantiate()
 		instance.position = self.global_position
@@ -42,15 +43,12 @@ func transition_state(from:State,to:State) -> void:
 	match to:
 		State.IDLE:
 			animated_sprite.play("idle")
-			animated_action.hide()
 		State.WALK:
 			animated_sprite.play("run")
-			animated_action.show()
-			animated_action.play("run")
 		State.JUMP:
 			animated_sprite.play("jump")
-			animated_action.show()
-			animated_action.play("jump")
+		State.FALL:
+			animated_sprite.play("fall")
 
 func get_next_state(current:State)-> State:
 	var direction := Input.get_axis("left", "right")
@@ -59,12 +57,18 @@ func get_next_state(current:State)-> State:
 		State.IDLE:
 			if not is_still:
 				return State.WALK
+			if not is_on_floor() and velocity.y < 0:
+				return State.JUMP
 		State.WALK:
 			if is_still:
 				return State.IDLE
 		State.JUMP:
-			if velocity.y >= 0:
+			if is_on_floor():
 				return State.IDLE
+			if not is_on_floor() and velocity.y > 0:
+				return State.FALL
+		State.FALL:
+			return State.IDLE
 	return current
 
 func tick_physics(state:State,delta:float)->void:
@@ -83,6 +87,8 @@ func tick_physics(state:State,delta:float)->void:
 		State.JUMP:
 			if is_on_floor():
 				velocity.y += 0 * delta
+		State.FALL:
+			pass
 	if not is_zero_approx(direction):
-		animated_sprite.scale.x = -1 if direction<0 else 1
+		sprite.scale.x = -1 if direction<0 else 1
 	move_and_slide()

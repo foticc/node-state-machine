@@ -23,7 +23,7 @@ func boom()->void:
 	queue_free()
 
 func _notify(body:Node2D)->void:
-	if body is Barrel:
+	if body is Sobj:
 		var dir = (body.global_position - global_position)
 		print("body:",body.global_position,"self:",self.global_position)
 		var distance = dir.length()

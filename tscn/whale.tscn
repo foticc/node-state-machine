@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://baae0eawv1yjh"]
+[gd_scene load_steps=7 format=3 uid="uid://baae0eawv1yjh"]
 
 [ext_resource type="SpriteFrames" uid="uid://cmexh3jfl0hxh" path="res://res/sprite_frames/whale.tres" id="2_6fcso"]
 [ext_resource type="Script" uid="uid://cucubuoeubail" path="res://classes/Whale.gd" id="2_uc2lw"]
 [ext_resource type="Script" uid="uid://fuedmpmi61nj" path="res://classes/StateMachine.gd" id="4_mle7i"]
+[ext_resource type="Texture2D" uid="uid://coanl4d1d3u3i" path="res://asset/Sprites/7-Objects/5-Exclamation Dialog/2-Closing/1.png" id="4_ujxnb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkffm"]
 size = Vector2(68, 46)
@@ -27,13 +28,22 @@ metadata/_custom_type_script = "uid://fuedmpmi61nj"
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Graphics"]
 sprite_frames = ExtResource("2_6fcso")
-animation = &"hit"
+animation = &"swalow"
 autoplay = "idle"
 
 [node name="RayCast" type="RayCast2D" parent="Graphics"]
 rotation = 1.5707964
 target_position = Vector2(0, 36)
 collision_mask = 7
+
+[node name="FloorChecker" type="RayCast2D" parent="Graphics"]
+position = Vector2(-30, 0)
+target_position = Vector2(0, 30)
+collision_mask = 4
+
+[node name="SpriteDialog" type="Sprite2D" parent="Graphics"]
+position = Vector2(-35, -15)
+texture = ExtResource("4_ujxnb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vkffm")

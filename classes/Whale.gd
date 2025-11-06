@@ -5,8 +5,10 @@ class_name Whale
 @onready var animated_sprite: AnimatedSprite2D = $Graphics/AnimatedSprite
 @onready var timer: Timer = $IdleTimer
 @onready var ray_cast: RayCast2D = $Graphics/RayCast
+@onready var floor_checker: RayCast2D = $Graphics/FloorChecker
 @onready var graphics: Node2D = $Graphics
 @onready var state_machine: StateMachine = $StateMachine
+@onready var sprite_dialog: Sprite2D = $Graphics/Sprite2D
 
 enum State{
 	IDLE,
@@ -43,9 +45,18 @@ func transition_state(from:State,to:State)->void:
 		State.IDLE:
 			animated_sprite.play("idle")
 			timer.start(_random_time())
+			var tween = create_tween()
+			tween.tween_property(sprite_dialog,"visible",true,0.1)
+			tween.tween_property(sprite_dialog,"scale",Vector2(0.5,0.5),0.5)
+			tween.tween_property(sprite_dialog,"scale",Vector2(1,1),0.5)
+			tween.tween_property(sprite_dialog,"visible",false,0.5)
+			await tween.finished
 		State.RUN:
 			animated_sprite.play("run")
 			timer.start(_random_time())
+			if not floor_checker.is_colliding():
+				direction *= -1
+				floor_checker.force_raycast_update()
 		State.SWALOW:
 			animated_sprite.play("swalow")
 			await animated_sprite.animation_finished
@@ -76,7 +87,7 @@ func get_next_state(current:State)->State:
 			if ray is Bomb:
 				return State.SWALOW
 			if ray is TileMapLayer:
-				direction = -direction
+				direction *= -1
 				ray_cast.force_raycast_update()
 				return State.IDLE
 			if ray is Player:
@@ -92,19 +103,24 @@ func get_next_state(current:State)->State:
 	return current
 
 func tick_physics(current:State,delta:float)->void:
-	if not is_on_floor():
-		velocity.y += default_gravity * delta
 	match current:
 		State.IDLE:
-			velocity.x = 0
+			_move(0,delta)
 		State.RUN:
-			velocity.x += direction * 50 * delta
+			if not floor_checker.is_colliding():
+				direction *= -1 
+			_move(10,delta)
 		State.SWALOW:
-			velocity.x += 0
+			_move(0,delta)
 		State.ATTACK:
-			velocity.x += 0
+			_move(0,delta)
 		State.HIT:
-			velocity.x += 0
+			_move(0,delta)
+	move_and_slide()
+
+func _move(speed:float,delta:float)->void:
+	velocity.x = move_toward(velocity.x, speed * direction, 2000*delta)
+	velocity.y += default_gravity * delta
 	move_and_slide()
 
 func _random_time()->int:

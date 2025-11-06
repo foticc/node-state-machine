@@ -1,7 +1,9 @@
-[gd_resource type="SpriteFrames" load_steps=45 format=3 uid="uid://c56a5oi2p6rxg"]
+[gd_resource type="SpriteFrames" load_steps=47 format=3 uid="uid://c56a5oi2p6rxg"]
 
 [ext_resource type="Texture2D" uid="uid://b4bi46yb7mudk" path="res://asset/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="1_nfqwd"]
+[ext_resource type="Texture2D" uid="uid://sttj3ru28by" path="res://asset/Sprites/1-Player-Bomb Guy/5-Fall/1.png" id="1_wodw6"]
 [ext_resource type="Texture2D" uid="uid://b4delq5p5kkmx" path="res://asset/Sprites/1-Player-Bomb Guy/1-Idle/2.png" id="2_41xr2"]
+[ext_resource type="Texture2D" uid="uid://dltk5wad8icfm" path="res://asset/Sprites/1-Player-Bomb Guy/5-Fall/2.png" id="2_f2ij4"]
 [ext_resource type="Texture2D" uid="uid://db38yu3gig0af" path="res://asset/Sprites/1-Player-Bomb Guy/1-Idle/3.png" id="3_bjk1g"]
 [ext_resource type="Texture2D" uid="uid://31m4g0yy31ys" path="res://asset/Sprites/1-Player-Bomb Guy/1-Idle/4.png" id="4_v0f7j"]
 [ext_resource type="Texture2D" uid="uid://8u4syt1d3mlm" path="res://asset/Sprites/1-Player-Bomb Guy/1-Idle/5.png" id="5_jiavd"]
@@ -47,6 +49,17 @@
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wodw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f2ij4")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_nfqwd")

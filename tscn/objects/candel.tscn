@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://swyoxslrv45v"]
+
+[ext_resource type="Texture2D" uid="uid://dqv0w61vn84iu" path="res://asset/Sprites/7-Objects/6-Candle/1.png" id="1_1bm3b"]
+[ext_resource type="Texture2D" uid="uid://cxt7p8235wgby" path="res://asset/Sprites/7-Objects/6-Candle/2.png" id="2_bwawx"]
+[ext_resource type="Texture2D" uid="uid://d0qb7sgv13gka" path="res://asset/Sprites/7-Objects/6-Candle/3.png" id="3_olnqy"]
+[ext_resource type="Texture2D" uid="uid://ds0lx0n464hls" path="res://asset/Sprites/7-Objects/6-Candle/4.png" id="4_bpsik"]
+[ext_resource type="Texture2D" uid="uid://bgj2j1ffkkpox" path="res://asset/Sprites/7-Objects/6-Candle/5.png" id="5_eeeaq"]
+[ext_resource type="Texture2D" uid="uid://vb24uve7e1hh" path="res://asset/Sprites/7-Objects/6-Candle/6.png" id="6_48cxh"]
+[ext_resource type="Texture2D" uid="uid://bfss7x4ety52u" path="res://asset/Sprites/7-Objects/6-Candle/7.png" id="7_w6u15"]
+[ext_resource type="Texture2D" uid="uid://c1g3ye7axkgx7" path="res://asset/Sprites/7-Objects/6-Candle/8.png" id="8_7q8i7"]
+[ext_resource type="Texture2D" uid="uid://bx83hn8wkm5kv" path="res://asset/Sprites/7-Objects/7-Candle Light/1.png" id="9_48cxh"]
+[ext_resource type="Texture2D" uid="uid://rc14ra6gn2ty" path="res://asset/Sprites/7-Objects/7-Candle Light/2.png" id="10_w6u15"]
+[ext_resource type="Texture2D" uid="uid://bhsysxk3hhn6g" path="res://asset/Sprites/7-Objects/7-Candle Light/3.png" id="11_7q8i7"]
+[ext_resource type="Texture2D" uid="uid://b2mau15j52c5s" path="res://asset/Sprites/7-Objects/7-Candle Light/4.png" id="12_vcvn5"]
+[ext_resource type="Texture2D" uid="uid://wxldqklwjdhm" path="res://asset/Sprites/7-Objects/7-Candle Light/5.png" id="13_j00i1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb6vy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1bm3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bwawx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_olnqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bpsik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eeeaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_48cxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w6u15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7q8i7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bm3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_48cxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w6u15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7q8i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vcvn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j00i1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Candel" type="Node2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(52, 69)
+sprite_frames = SubResource("SpriteFrames_yb6vy")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(52, 40)
+sprite_frames = SubResource("SpriteFrames_1bm3b")
+autoplay = "default"
+metadata/_edit_group_ = true
