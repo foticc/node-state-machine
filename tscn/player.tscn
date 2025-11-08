@@ -22,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://b1hjk3iykb3an" path="res://asset/Sprites/7-Objects/15-Fall Particles/5.png" id="14_voclr"]
 [ext_resource type="Texture2D" uid="uid://182navm82bjs" path="res://asset/Sprites/7-Objects/15-Fall Particles/6.png" id="15_785da"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j80i"]
-size = Vector2(58, 58)
+[sub_resource type="CircleShape2D" id="CircleShape2D_e00wn"]
+radius = 30.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_88mv1"]
 animations = [{
@@ -102,15 +102,15 @@ collision_mask = 4
 script = ExtResource("1_7omxl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7j80i")
+shape = SubResource("CircleShape2D_e00wn")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_7j80i")
-animation = &"jump"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="AnimatedAction" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 15)
+position = Vector2(0, 30)
 sprite_frames = SubResource("SpriteFrames_88mv1")
 animation = &"jump"
 

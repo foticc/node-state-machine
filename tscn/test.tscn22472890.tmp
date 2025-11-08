@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cw0lr3v60iyg"]
+[gd_scene load_steps=26 format=3 uid="uid://cw0lr3v60iyg"]
 
 [ext_resource type="Texture2D" uid="uid://dqv0w61vn84iu" path="res://asset/Sprites/7-Objects/6-Candle/1.png" id="2_lco2r"]
 [ext_resource type="Texture2D" uid="uid://cxt7p8235wgby" path="res://asset/Sprites/7-Objects/6-Candle/2.png" id="3_pu6gk"]
@@ -15,8 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://wxldqklwjdhm" path="res://asset/Sprites/7-Objects/7-Candle Light/5.png" id="14_tah4c"]
 [ext_resource type="PackedScene" uid="uid://b3o017rjlv47w" path="res://tscn/objects/window.tscn" id="15_qachy"]
 [ext_resource type="PackedScene" uid="uid://baae0eawv1yjh" path="res://tscn/whale.tscn" id="20_5kcdt"]
+[ext_resource type="PackedScene" uid="uid://b3oosgm7nf68k" path="res://tscn/barrel.tscn" id="22_c4efu"]
 [ext_resource type="PackedScene" uid="uid://ch06eyp66dgh6" path="res://tscn/player.tscn" id="22_h2dlj"]
 [ext_resource type="PackedScene" uid="uid://b0khict2spy8q" path="res://tscn/map.tscn" id="23_c4efu"]
+[ext_resource type="PackedScene" uid="uid://drcqiidnouwpc" path="res://tscn/sobj.tscn" id="23_qn3f3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lco2r"]
 size = Vector2(18.5, 35)
@@ -267,7 +269,30 @@ scale = Vector2(-1, 1)
 
 [node name="Whale" parent="." instance=ExtResource("20_5kcdt")]
 z_index = 1
-position = Vector2(155, 299)
+position = Vector2(218, 461)
 
 [node name="Player" parent="." instance=ExtResource("22_h2dlj")]
 position = Vector2(451, 473)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Barrel" parent="Objects" instance=ExtResource("22_c4efu")]
+position = Vector2(309, 482)
+
+[node name="Sobj" parent="Objects" instance=ExtResource("23_qn3f3")]
+position = Vector2(657.69293, 572.2267)
+
+[node name="Sobj2" parent="Objects" instance=ExtResource("23_qn3f3")]
+position = Vector2(228, 190)
+
+[node name="Sobj3" parent="Objects" instance=ExtResource("23_qn3f3")]
+position = Vector2(228, 190)
+
+[node name="Sobj4" parent="Objects" instance=ExtResource("23_qn3f3")]
+position = Vector2(228, 190)
+
+[node name="Sobj5" parent="Objects" instance=ExtResource("23_qn3f3")]
+position = Vector2(228, 190)
+
+[node name="Sobj6" parent="Objects" instance=ExtResource("23_qn3f3")]
+position = Vector2(228, 190)
