@@ -7,7 +7,8 @@ class_name Player
 enum State {
 	IDLE,
 	WALK,
-	JUMP
+	JUMP,
+	FALL
 }
 
 const bomb = preload("res://tscn/bomb.tscn")
@@ -21,7 +22,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
-		velocity.y = -300
+		velocity.y = -500
 	if event.is_action_pressed("attack"):
 		var instance:Bomb = bomb.instantiate()
 		instance.position = self.global_position
@@ -51,6 +52,9 @@ func transition_state(from:State,to:State) -> void:
 			animated_sprite.play("jump")
 			animated_action.show()
 			animated_action.play("jump")
+		State.FALL:
+			animated_sprite.play("fall")
+			animated_action.hide()
 
 func get_next_state(current:State)-> State:
 	var direction := Input.get_axis("left", "right")
@@ -59,11 +63,16 @@ func get_next_state(current:State)-> State:
 		State.IDLE:
 			if not is_still:
 				return State.WALK
+			if velocity.y < 0:
+				return State.JUMP
 		State.WALK:
 			if is_still:
 				return State.IDLE
 		State.JUMP:
-			if velocity.y >= 0:
+			if not is_on_floor():
+				return State.FALL
+		State.FALL:
+			if is_on_floor():
 				return State.IDLE
 	return current
 
@@ -83,6 +92,8 @@ func tick_physics(state:State,delta:float)->void:
 		State.JUMP:
 			if is_on_floor():
 				velocity.y += 0 * delta
+		State.FALL:
+			velocity.x = move_toward(velocity.x,direction * SPEED,SPEED/0.2)
 	if not is_zero_approx(direction):
 		animated_sprite.scale.x = -1 if direction<0 else 1
 	move_and_slide()

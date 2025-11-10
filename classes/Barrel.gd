@@ -1,5 +1,4 @@
-extends RigidBody2D
-class_name 
+extends RigidBody2D 
 
 
 func _ready() -> void:

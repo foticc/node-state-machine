@@ -45,12 +45,6 @@ func transition_state(from:State,to:State)->void:
 		State.IDLE:
 			animated_sprite.play("idle")
 			timer.start(_random_time())
-			var tween = create_tween()
-			tween.tween_property(sprite_dialog,"visible",true,0.1)
-			tween.tween_property(sprite_dialog,"scale",Vector2(0.5,0.5),0.5)
-			tween.tween_property(sprite_dialog,"scale",Vector2(1,1),0.5)
-			tween.tween_property(sprite_dialog,"visible",false,0.5)
-			await tween.finished
 		State.RUN:
 			animated_sprite.play("run")
 			timer.start(_random_time())
