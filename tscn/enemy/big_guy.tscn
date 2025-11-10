@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://blams5cx6migv"]
+
+[ext_resource type="Script" uid="uid://ktioqyo5sw8h" path="res://tscn/enemy/big_guy.gd" id="1_esuek"]
+[ext_resource type="SpriteFrames" uid="uid://cdrcaba44giut" path="res://res/sprite_frames/bigguy.tres" id="1_rkps8"]
+[ext_resource type="Script" uid="uid://fuedmpmi61nj" path="res://classes/StateMachine.gd" id="2_klf2s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klf2s"]
+radius = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esuek"]
+size = Vector2(172, 60)
+
+[node name="BigGuy" type="CharacterBody2D"]
+script = ExtResource("1_esuek")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_rkps8")
+animation = &"pick"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 11)
+shape = SubResource("CircleShape2D_klf2s")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_klf2s")
+metadata/_custom_type_script = "uid://fuedmpmi61nj"
+
+[node name="Check" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Check"]
+shape = SubResource("RectangleShape2D_esuek")

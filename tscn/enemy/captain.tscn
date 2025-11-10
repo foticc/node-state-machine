@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnrnwdgbyp41"]
 
-[ext_resource type="SpriteFrames" uid="uid://w5xhjy3s4mcm" path="res://res/sprite_frames/captain.tres" id="1_455v3"]
+[ext_resource type="SpriteFrames" uid="uid://cdrcaba44giut" path="res://res/sprite_frames/bigguy.tres" id="1_455v3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_455v3"]
 size = Vector2(49, 74)
@@ -11,7 +11,7 @@ collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_455v3")
-animation = &"idle"
+animation = &"new_animation_1"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

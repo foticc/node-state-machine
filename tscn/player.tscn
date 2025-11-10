@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://ch06eyp66dgh6"]
 
-[ext_resource type="SpriteFrames" uid="uid://c56a5oi2p6rxg" path="res://sprite/player.tres" id="1_7j80i"]
+[ext_resource type="SpriteFrames" uid="uid://c56a5oi2p6rxg" path="res://res/sprite/player.tres" id="1_7j80i"]
 [ext_resource type="Script" uid="uid://d2rx16ujk0jk2" path="res://classes/Player.gd" id="1_7omxl"]
 [ext_resource type="Script" uid="uid://fuedmpmi61nj" path="res://classes/StateMachine.gd" id="3_3c7ea"]
 [ext_resource type="Texture2D" uid="uid://cnkypy0yyseic" path="res://asset/Sprites/7-Objects/14-Jump Particles/1.png" id="4_88mv1"]
